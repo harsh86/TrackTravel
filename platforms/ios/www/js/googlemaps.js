@@ -37,8 +37,12 @@ function GoogleMap(){
         mapTypeId: google.maps.MapTypeId.ROADMAP
         
         }
+
+        var $content = $(" div:jqmData(role=content)");
+       $content.height (screen.height - 50);
+        var map = new google.maps.Map ($content[0], mapOptions);
         
-        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+       
         
         return map;
     }

@@ -5,10 +5,40 @@
         
         <meta charset="utf-8">
             <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+            <script type="text/javascript" src="js/googlemaps.js"></script>
+             <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+            <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
             <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css"rel="stylesheet"type="text/css" />
             <link href="css/index.css"rel="stylesheet"type="text/css" />
-            <script type="text/javascript" src="js/googlemaps.js"></script>
-            
+            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+         <link href="http://jquerymobile.com/demos/1.2.0/docs/_assets/css/jqm-docs.css" rel="stylesheet"type="text/css" />
+         <link href="http://jquerymobile.com/demos/1.2.0/docs/_assets/js/jqm-docs.js" rel="stylesheet"type="text/css" />
+            <style>
+            #popupPanel-popup {
+    right: 0 !important;
+    left: auto !important;
+}
+#popupPanel {
+    width: 200px;
+    border: 1px solid #000;
+    border-right: none;
+    background: rgba(0,0,0,.5);
+    margin: -1px 0;
+}
+#popupPanel .ui-btn {
+    margin: 2em 15px;
+}
+            </style>
+            <script>
+            $( "#popupPanel" ).on({
+    popupbeforeposition: function() {
+        var h = $( window ).height();
+ 
+        $( "#popupPanel" ).css( "height", h );
+    }
+});
+
+            </script>
             
             
             <!-- iPad/iPhone specific css below, add after your main css >
@@ -62,9 +92,43 @@
             
                 </script>
             </head>
-    <body onload="onDeviceReady()">
-        <div id="map_canvas" class="maps-show">
-            Couldn't load map because there was no internet connection available
-        </div>
+    <body class="ui-mobile-viewport ui-overlay-c" onload="onDeviceReady()">
+        <div data-role="page" class="jqm-demos ui-page ui-body-c ui-page-panel ui-page-active ui-page-panel-open"  tabindex="0" style="min-height: 1662px;">
+            
+           
+        
+            <div data-role="header" data-theme="f" data-position="fixed" class="ui-header ui-bar-f ui-header-fixed slidedown" role="banner">
+                <h1 class="ui-title" role="heading" aria-level="1">Lets Ride</h1>
+                 <a href="#panel-nav" data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Navigation"><span class="ui-btn-inner"><span class="ui-btn-text">Navigation</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+       
+            </div>
+
+       
+            <div data-role="content" class="jqm-content ui-content" role="main">
+                
+                    Couldn't load map because there was no internet connection available
+                
+            </div>
+       
+
+        <div data-role="panel" id="panel-nav" class="jqm-nav-panel ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-c ui-panel-animate ui-panel-closed" data-position="left" data-display="overlay" data-theme="c">
+
+    
+        <div class="ui-panel-inner">
+
+            <!--<form class="ui-listview-filter ui-bar-c" role="search"><div class="ui-input-search ui-shadow-inset ui-btn-corner-all ui-btn-shadow ui-icon-searchfield ui-body-c"><input placeholder="Search..." data-type="search" class="ui-input-text ui-body-c"><a href="#" class="ui-input-clear ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-fullsize ui-btn-icon-notext ui-input-clear-hidden" title="clear text" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="delete" data-iconpos="notext" data-theme="c" data-mini="false"><span class="ui-btn-inner"><span class="ui-btn-text">clear text</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a></div></form>-->
+
+            <ul data-role="listview" data-inset="false" data-filter="true" data-theme="d" data-divider-theme="d" data-icon="false" data-filter-placeholder="Search..." class="jqm-list ui-listview">
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="d" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child ui-btn-up-d"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="../../" class="ui-link-inherit">Home</a></div></div></li>
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="d" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-d"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="../../guides/" class="ui-link-inherit">Guides</a></div></div></li>
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="false" data-iconpos="right" data-theme="d" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-d"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="../../demos/" class="ui-link-inherit">Demos</a></div></div></li>
+            
+        </ul></div>
+    </div>
+        </div>    
+        
+       
+ 
+
     </body>
 </html>
