@@ -40,6 +40,7 @@ function GoogleMap(){
 
         var $content = $(" div:jqmData(role=content)");
        $content.height (screen.height - 50);
+       $content.width (screen.width);
         var map = new google.maps.Map ($content[0], mapOptions);
         
        
